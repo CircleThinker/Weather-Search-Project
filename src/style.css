@@ -1,3 +1,10 @@
 h1 {
   color: red;
 }
+.container {
+  max-width: 60%;
+  border-width: 2px;
+  border-color: #97979759;
+
+  border-style: dashed;
+}
