@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -28,19 +29,42 @@
               type="text"
               placeholder="Please enter your city"
               autocomplete="off"
+              id="city-search"
             />
             <input type="submit" value="Search" id="enter-city" />
           </form>
         </div>
       </div>
+      <h2>
+        <span id="time-and-date">Day Date Month Hour:Min</span><br /><br />
+        
+        <div id="start-city" class="welcome">Welcome</div> <div id="description">Cloudy
+           </div>
+      </h2>
+    <div class="row align-items-start">
+    <div class="col">
+              <h6>
+                Currently: <strong id="current">°</strong><br />
+                High: <strong id="high">°</strong> <br />
+                Low: <strong id="low">°</strong> <br /></div></h6>
+   <div class="col">
+     <h6>
+                Real feel: <strong id="feel">°</strong><br />
+                Windspeed: <strong id="wind">mph</strong> <br />
+                Humidity: <strong id="rain">%</strong></div>
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="byline">
-      <a href="https://github.com/CircleThinker/Weather-Search-Project.git"
+      <a href="https://github.com/CircleThinker/Weather-Search-Project.git" target="blank"
         >Open Source code
       </a>
       by CircleThinker<br />
       Tutorage from
-      <a href="https://www.shecodes.io/">SheCodes</a><br />
+      <a href="https://www.shecodes.io/" target="blank">SheCodes</a><br />
     </div>
 
     <script src="src/index.js"></script>

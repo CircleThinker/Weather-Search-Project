@@ -14,3 +14,19 @@
   text-align: center;
   color: #818080;
 }
+
+form {
+  margin: 15px;
+}
+h2 {
+  padding-top: 10px;
+}
+h6 {
+  padding-left: 10px;
+  padding-top: 0px;
+  font-size: 18px;
+}
+
+.welcome {
+  padding-bottom: 0px;
+}
