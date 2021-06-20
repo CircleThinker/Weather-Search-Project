@@ -1,10 +1,16 @@
-h1 {
-  color: red;
-}
 .container {
-  max-width: 60%;
+  max-width: 40%;
   border-width: 2px;
   border-color: #97979759;
+  display: block;
+  margin-top: 75px;
+  margin-bottom: 75px;
 
   border-style: dashed;
+  font-family: "Nunito Sans", sans-serif;
+}
+.byline {
+  font-size: 12px;
+  text-align: center;
+  color: #818080;
 }
