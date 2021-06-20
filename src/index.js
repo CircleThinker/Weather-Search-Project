@@ -59,7 +59,7 @@ function displayTemp(response) {
   let feelsLike = document.querySelector("#feel");
   feelsLike.innerHTML = `${feel}°C`;
   let windSpeed = document.querySelector("#wind");
-  windSpeed.innerHTML = `${winds}mph`;
+  windSpeed.innerHTML = `${winds}mps`;
   let newDescription = document.querySelector("#description");
   newDescription.innerHTML = `${response.data.weather[0].description}`;
   let humidity = document.querySelector("#rain");
