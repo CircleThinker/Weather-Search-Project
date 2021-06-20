@@ -1,13 +1,19 @@
 .container {
   max-width: 40%;
   border-width: 2px;
-  border-color: #97979759;
+  border-color: #013d3859;
   display: block;
   margin-top: 75px;
   margin-bottom: 75px;
 
   border-style: dashed;
   font-family: "Nunito Sans", sans-serif;
+  color: #013d38;
+  background: radial-gradient(
+    592px at 48.2% 50%,
+    rgba(255, 255, 249, 0.6) 0%,
+    rgb(175, 252, 245) 74.6%
+  );
 }
 .byline {
   font-size: 12px;
@@ -32,4 +38,5 @@ h6 {
 }
 .dash {
   color: white;
+  opacity: 0%;
 }
