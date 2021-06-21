@@ -50,14 +50,20 @@ function displayTemp(response) {
 
   let winds = response.data.wind.speed;
 
+  celsiusTemperature = response.data.main.temp;
+  celsiusHigh = response.data.main.temp_max;
+  celsiusLow = response.data.main.temp_min;
+  celsiusReal = response.data.main.feels_like;
+  mpsWindspeed = response.data.wind.speed;
+
   let currentTemp = document.querySelector("#current");
-  currentTemp.innerHTML = `${temperature}°C `;
+  currentTemp.innerHTML = `${temperature}° `;
   let highTemp = document.querySelector("#high");
-  highTemp.innerHTML = `${high}°C `;
+  highTemp.innerHTML = `${high}° `;
   let lowTemp = document.querySelector("#low");
-  lowTemp.innerHTML = `${low}°C `;
+  lowTemp.innerHTML = `${low}° `;
   let feelsLike = document.querySelector("#feel");
-  feelsLike.innerHTML = `${feel}°C`;
+  feelsLike.innerHTML = `${feel}°`;
   let windSpeed = document.querySelector("#wind");
   windSpeed.innerHTML = `${winds}mps`;
   let newDescription = document.querySelector("#description");
@@ -84,3 +90,30 @@ function updateCity(event) {
 }
 
 form.addEventListener("submit", updateCity);
+
+function displayFarenheitTemp(event) {
+  event.preventDefault();
+  let farenheitTemp = Math.round(celsiusTemperature * 9) / 5 + 32;
+  let farenheitHigh = Math.round(celsiusHigh * 9) / 5 + 32;
+  let farenheitLow = Math.round(celsiusLow * 9) / 5 + 32;
+  let farenheitReal = Math.round(celsiusReal * 9) / 5 + 32;
+  let mphWindspeed = Math.round(mpsWindspeed * 2.237);
+  let currentTemp = document.querySelector("#current");
+  currentTemp.innerHTML = `${farenheitTemp}° `;
+  let highTemp = document.querySelector("#high");
+  highTemp.innerHTML = `${farenheitHigh}° `;
+  let lowTemp = document.querySelector("#low");
+  lowTemp.innerHTML = `${farenheitLow}° `;
+  let feelsLike = document.querySelector("#feel");
+  feelsLike.innerHTML = `${farenheitReal}°`;
+  let windSpeed = document.querySelector("#wind");
+  windSpeed.innerHTML = `${mphWindspeed}mph`;
+}
+
+let farenheitLink = document.querySelector("#fahrenheit-link");
+farenheitLink.addEventListener("click", displayFarenheitTemp);
+let celsiusTemperature = null;
+let celsiusHigh = null;
+let celsiusLow = null;
+let celsiusReal = null;
+let mpsWindspeed = null;

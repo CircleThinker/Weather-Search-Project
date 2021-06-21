@@ -26,6 +26,7 @@ form {
 }
 h2 {
   padding-top: 10px;
+  text-transform: capitalize;
 }
 h6 {
   padding-left: 10px;
@@ -39,4 +40,11 @@ h6 {
 .dash {
   color: white;
   opacity: 0%;
+}
+h3 {
+  text-align: left;
+}
+
+h1 {
+  padding-top: 10px;
 }
