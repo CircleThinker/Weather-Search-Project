@@ -64,6 +64,11 @@ function displayTemp(response) {
   newDescription.innerHTML = `${response.data.weather[0].description}`;
   let humidity = document.querySelector("#rain");
   humidity.innerHTML = `${response.data.main.humidity}%`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 let form = document.querySelector("#search-form");
