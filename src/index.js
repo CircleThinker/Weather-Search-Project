@@ -48,7 +48,7 @@ function displayTemp(response) {
   let low = Math.round(response.data.main.temp_min);
   let feel = Math.round(response.data.main.feels_like);
 
-  let winds = response.data.wind.speed;
+  let winds = Math.round(response.data.wind.speed * 3.6);
 
   celsiusTemperature = response.data.main.temp;
   celsiusHigh = response.data.main.temp_max;
@@ -57,15 +57,15 @@ function displayTemp(response) {
   mpsWindspeed = response.data.wind.speed;
 
   let currentTemp = document.querySelector("#current");
-  currentTemp.innerHTML = `${temperature}° `;
+  currentTemp.innerHTML = `${temperature}°C `;
   let highTemp = document.querySelector("#high");
-  highTemp.innerHTML = `${high}° `;
+  highTemp.innerHTML = `${high}°C `;
   let lowTemp = document.querySelector("#low");
-  lowTemp.innerHTML = `${low}° `;
+  lowTemp.innerHTML = `${low}°C `;
   let feelsLike = document.querySelector("#feel");
-  feelsLike.innerHTML = `${feel}°`;
+  feelsLike.innerHTML = `${feel}°C`;
   let windSpeed = document.querySelector("#wind");
-  windSpeed.innerHTML = `${winds}mps`;
+  windSpeed.innerHTML = `${winds}kph`;
   let newDescription = document.querySelector("#description");
   newDescription.innerHTML = `${response.data.weather[0].description}`;
   let humidity = document.querySelector("#rain");
@@ -99,19 +99,35 @@ function displayFarenheitTemp(event) {
   let farenheitReal = Math.round(celsiusReal * 9) / 5 + 32;
   let mphWindspeed = Math.round(mpsWindspeed * 2.237);
   let currentTemp = document.querySelector("#current");
-  currentTemp.innerHTML = `${farenheitTemp}° `;
+  currentTemp.innerHTML = `${farenheitTemp}°F `;
   let highTemp = document.querySelector("#high");
-  highTemp.innerHTML = `${farenheitHigh}° `;
+  highTemp.innerHTML = `${farenheitHigh}°F `;
   let lowTemp = document.querySelector("#low");
-  lowTemp.innerHTML = `${farenheitLow}° `;
+  lowTemp.innerHTML = `${farenheitLow}°F `;
   let feelsLike = document.querySelector("#feel");
-  feelsLike.innerHTML = `${farenheitReal}°`;
+  feelsLike.innerHTML = `${farenheitReal}°F`;
   let windSpeed = document.querySelector("#wind");
   windSpeed.innerHTML = `${mphWindspeed}mph`;
 }
 
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#current");
+  currentTemp.innerHTML = `${Math.round(celsiusTemperature)}°C`;
+  let highTemp = document.querySelector("#high");
+  highTemp.innerHTML = `${Math.round(celsiusHigh)}°C `;
+  let lowTemp = document.querySelector("#low");
+  lowTemp.innerHTML = `${Math.round(celsiusLow)}°C `;
+  let feelsLike = document.querySelector("#feel");
+  feelsLike.innerHTML = `${Math.round(celsiusReal)}°C`;
+  let windSpeed = document.querySelector("#wind");
+  windSpeed.innerHTML = `${Math.round(mpsWindspeed * 3.6)}kph`;
+}
+
 let farenheitLink = document.querySelector("#fahrenheit-link");
 farenheitLink.addEventListener("click", displayFarenheitTemp);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
 let celsiusTemperature = null;
 let celsiusHigh = null;
 let celsiusLow = null;
