@@ -93,10 +93,10 @@ form.addEventListener("submit", updateCity);
 
 function displayFarenheitTemp(event) {
   event.preventDefault();
-  let farenheitTemp = Math.round(celsiusTemperature * 9) / 5 + 32;
-  let farenheitHigh = Math.round(celsiusHigh * 9) / 5 + 32;
-  let farenheitLow = Math.round(celsiusLow * 9) / 5 + 32;
-  let farenheitReal = Math.round(celsiusReal * 9) / 5 + 32;
+  let farenheitTemp = Math.round((celsiusTemperature * 9) / 5 + 32);
+  let farenheitHigh = Math.round((celsiusHigh * 9) / 5 + 32);
+  let farenheitLow = Math.round((celsiusLow * 9) / 5 + 32);
+  let farenheitReal = Math.round((celsiusReal * 9) / 5 + 32);
   let mphWindspeed = Math.round(mpsWindspeed * 2.237);
   let currentTemp = document.querySelector("#current");
   currentTemp.innerHTML = `${farenheitTemp}°F `;
